@@ -1,22 +1,38 @@
-import cv2
-import numpy as np
-
-img = cv2.imread('C:/Users/PG LAB/Desktop/sample.jpg')
-cv2.imshow('Original Image', img)
-image = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-
-ret, thresh1 = cv2.threshold(img, 120, 255, cv2.THRESH_BINARY)
-ret, thresh2 = cv2.threshold(img, 120, 255, cv2.THRESH_BINARY_INV)
-ret, thresh3 = cv2.threshold(img, 120, 255, cv2.THRESH_TRUNC)
-ret, thresh4 = cv2.threshold(img, 120, 255, cv2.THRESH_TOZERO)
-ret, thresh5 = cv2.threshold(img, 120, 255, cv2.THRESH_TOZERO_INV)
-
-cv2.imshow('Binary Threshold', thresh1)
-cv2.imshow('Binary Threshold Inverted', thresh2)
-cv2.imshow('Truncated Threshold', thresh3)
-cv2.imshow('Set to 0', thresh4)
-cv2.imshow('Set to 0 Inverted', thresh5)
-
-
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+# Function to display hashtable
+def display_hash(hashTable):
+      
+    for i in range(len(hashTable)):
+        print(i, end = " ")
+          
+        for j in hashTable[i]:
+            print("-->", end = " ")
+            print(j, end = " ")
+              
+        print()
+  
+# Creating Hashtable as 
+# a nested list.
+HashTable = [[] for _ in range(10)]
+  
+# Hashing Function to return 
+# key for every value.
+def Hashing(keyvalue):
+    return keyvalue % len(HashTable)
+  
+  
+# Insert Function to add
+# values to the hash table
+def insert(Hashtable, keyvalue, value):
+      
+    hash_key = Hashing(keyvalue)
+    Hashtable[hash_key].append(value)
+  
+# Driver Code
+insert(HashTable, 10, 'Allahabad')
+insert(HashTable, 25, 'Mumbai')
+insert(HashTable, 20, 'Mathura')
+insert(HashTable, 9, 'Delhi')
+insert(HashTable, 21, 'Punjab')
+insert(HashTable, 21, 'Noida')
+  
+display_hash (HashTable)
