@@ -4,10 +4,10 @@ import numpy as np
 
 
 
-img = cv.imread('C:/Users/PG LAB/Desktop/sample.jpg')
+img = cv.imread('C:/Users/PG LAB/Desktop/pattern.jpg')
 
-lower = np.array([10, 0, 210], dtype=np.uint8)
-upper = np.array([160, 40, 255], dtype=np.uint8)
+lower = np.array([123,10, 230], dtype=np.uint8)
+upper = np.array([235, 123, 244], dtype=np.uint8)
 
 hsv = cv.cvtColor(img, cv.COLOR_BGR2HSV)
 mask = cv.inRange(hsv, lower, upper)
