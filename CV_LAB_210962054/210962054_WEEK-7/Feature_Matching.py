@@ -5,8 +5,8 @@ img1 = cv2.imread('C:/Users/PG LAB/Desktop/patch.jpg',cv2.COLOR_BGR2GRAY) # quer
 img2 = cv2.imread('C:/Users/PG LAB/Desktop/sample.jpg',cv2.COLOR_BGR2GRAY) # trainImage
 # Initiate SIFT detector
 orb = cv2.ORB_create()
-img2=cv2.resize(img2, (288, 203))
-img1=cv2.resize(img1, (288, 203))
+img2=cv2.resize(img2, (200, 200))
+img1=cv2.resize(img1, (200, 200))
 surf = cv2.xfeatures2d.SURF_create()
 # find the keypoints and descriptors with SIFT
 kp1, des1 = orb.detectAndCompute(img1,None)
